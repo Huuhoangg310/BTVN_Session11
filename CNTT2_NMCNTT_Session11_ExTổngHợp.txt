@@ -1,0 +1,112 @@
+
+## PHẦN 1: HOÀN THIỆN SRS BẰNG HEADING STYLES VÀ AUTO TOC
+### 1. Mở rộng cấu trúc tiêu đề SRS
+| Cấp tiêu đề | Nội dung | Heading Style |
+|---|---|---|
+| 1 | Giới thiệu dự án | Heading 1 |
+| 1.1 | Mục tiêu | Heading 2 |
+| 1.2 | Đối tượng sử dụng | Heading 2 |
+| 2 | Chức năng hệ thống | Heading 1 |
+| 2.1 | Quản lý mượn sách | Heading 2 |
+| 2.1.1 | Luồng mượn sách qua thẻ sinh viên | Heading 3 |
+| 2.2 | Quản lý trả sách | Heading 2 |
+| 3 | Yêu cầu bảo mật | Heading 1 |
+### 2. Nội dung mô tả yêu cầu
+**1. Giới thiệu dự án (Heading 1)**
+**1.1. Mục tiêu (Heading 2)**
+Hệ thống Quản lý Thư viện Trường được xây dựng nhằm hỗ trợ quản lý sách, thông tin sinh viên và các giao dịch mượn trả sách. Hệ thống giúp tự động hóa quy trình quản lý, giảm sai sót và nâng cao hiệu quả hoạt động của thư viện.
+**1.2. Đối tượng sử dụng (Heading 2)**
+Người sử dụng hệ thống gồm thủ thư, sinh viên và quản trị viên. Mỗi đối tượng được cấp quyền truy cập phù hợp với nhiệm vụ của mình.
+**2. Chức năng hệ thống (Heading 1)**
+Hệ thống phải cho phép thủ thư quản lý thông tin sách, tra cứu sách và thực hiện các giao dịch mượn trả sách. Hệ thống phải cho phép tìm kiếm thông tin sinh viên, theo dõi tình trạng mượn sách và xác định các phiếu mượn quá hạn.
+**2.1. Quản lý mượn sách (Heading 2)**
+Hệ thống cho phép thủ thư tạo phiếu mượn dựa trên mã sinh viên và mã sách hợp lệ.
+**2.1.1. Luồng mượn sách qua thẻ sinh viên (Heading 3)**
+Sinh viên xuất trình thẻ để thủ thư tra cứu thông tin. Sau khi kiểm tra điều kiện mượn và tình trạng sách, hệ thống ghi nhận phiếu mượn và cập nhật trạng thái sách.
+**2.2. Quản lý trả sách (Heading 2)**
+Hệ thống ghi nhận ngày trả, cập nhật tình trạng sách và xác định trường hợp trả sách quá hạn.
+**3. Yêu cầu bảo mật (Heading 1)**
+Hệ thống phải yêu cầu người dùng đăng nhập trước khi truy cập các chức năng cần xác thực. Hệ thống phải phân quyền theo vai trò, bảo vệ thông tin cá nhân và ngăn người dùng không có quyền truy cập dữ liệu quản lý.
+### 3. Tạo mục lục tự động (Auto TOC)
+- Bước 1: Mở tài liệu SRS trong Microsoft Word.
+- Bước 2: Gán Heading 1 cho các mục lớn, Heading 2 cho các mục con và Heading 3 cho mục 2.1.1.
+- Bước 3: Đặt con trỏ ở đầu tài liệu và chọn **References → Table of Contents** để chèn mục lục tự động.
+- Bước 4: Thêm một đoạn văn đủ dài trước mục 3 để đẩy mục này sang trang tiếp theo.
+- Bước 5: Nhấp chuột phải vào mục lục, chọn **Update Field → Update entire table**.
+- Bước 6: Kiểm tra số trang đã cập nhật và chụp ảnh màn hình làm minh chứng.
+**Lưu ý:** Số trang thực tế phụ thuộc vào font chữ, cỡ chữ, lề trang và nội dung tài liệu. Cần thực hiện trên Word để ghi nhận số trang chính xác.
+## PHẦN 2: CHUẨN HÓA DỮ LIỆU VÀ AUTOFILTER
+### 1. Xác định chính xác 3 lỗi vi phạm 5 Quy tắc Vàng
+| STT | Lỗi | Vị trí (hàng) | Quy tắc bị vi phạm |
+|---|---|---|---|
+| 1 | Gộp ô A1:E1 để làm tiêu đề lớn trong vùng bảng dữ liệu | Hàng 1 | Không merge ô trong bảng dữ liệu |
+| 2 | Có một hàng trống hoàn toàn nằm giữa các bản ghi | Hàng 5 | Không để hàng trống trong vùng dữ liệu |
+| 3 | Đặt dòng Tổng cộng chung với vùng dữ liệu | Hàng 6 | Không đặt dòng tổng kết trong vùng dữ liệu |
+### 2. Bảng Phiếu mượn sách sau khi chuẩn hóa
+Xóa hàng tiêu đề đã gộp, hàng trống và dòng tổng cộng khỏi vùng dữ liệu. Đưa tiêu đề báo cáo ra ngoài bảng và đặt tên cột tại hàng đầu tiên của bảng.
+**Phiếu mượn sách tháng 10/2026**
+| MSSV | Họ Tên | Mã Sách | Ngày Mượn | Tình Trạng |
+|---|---|---|---|---|
+| SV001 | Nguyễn Văn An | S001 | 01/10/2026 | Đang mượn |
+| SV002 | Trần Thị Bình | S002 | 03/10/2026 | Quá hạn |
+| SV003 | Lê Văn Cường | S003 | 10/10/2026 | Đã trả |
+| SV004 | Phạm Thu Hà | S099 | 12/10/2026 | Đang mượn |
+**Tổng cộng:** 4 phiếu mượn.
+### 3. Xác định Record và Field
+- **Record (bản ghi):** Một hàng dữ liệu mô tả một phiếu mượn sách cụ thể. Ví dụ: `SV001 | Nguyễn Văn An | S001 | 01/10/2026 | Đang mượn`.
+- **Field (trường dữ liệu):** Một cột biểu diễn một thuộc tính của phiếu mượn. Ví dụ: `MSSV`, `Họ Tên`, `Mã Sách`, `Ngày Mượn` và `Tình Trạng`.
+### 4. Bật AutoFilter và lọc sinh viên quá hạn
+- Bước 1: Chọn một ô bất kỳ trong bảng dữ liệu đã chuẩn hóa.
+- Bước 2: Nhấn `Ctrl + Shift + L` để bật AutoFilter.
+- Bước 3: Nhấn nút lọc tại cột `Tình Trạng`.
+- Bước 4: Bỏ chọn các giá trị khác và chỉ chọn `Quá hạn`.
+- Bước 5: Nhấn OK để xem kết quả.
+**Kết quả:** Có 1 sinh viên đang quá hạn là Trần Thị Bình, mã sinh viên SV002.
+## PHẦN 3: NỐI DỮ LIỆU BẰNG VLOOKUP
+### 1. Thêm cột Tên Sách
+Thêm cột `Tên Sách` vào bảng Phiếu mượn sách. Giả sử bảng `DanhMucSach` có dữ liệu từ hàng 2 đến hàng 100, trong đó cột A là Mã Sách, cột B là Tên Sách và cột C là Thể Loại.
+Công thức tại ô F2:
+```excel
+=VLOOKUP(C2,DanhMucSach!$A$2:$C$100,2,FALSE)
+```
+Sao chép công thức xuống các dòng còn lại.
+**Giải thích:**
+- `C2`: Mã Sách cần tra cứu.
+- `DanhMucSach!$A$2:$C$100`: Vùng dữ liệu tra cứu được cố định bằng dấu `$`.
+- `2`: Lấy tên sách ở cột thứ hai trong vùng tra cứu.
+- `FALSE`: Yêu cầu tìm kiếm chính xác.
+### 2. Xử lý mã sách S099
+Mã `S099` không tồn tại trong sheet `DanhMucSach`, vì vậy VLOOKUP trả về lỗi `#N/A`. Nguyên nhân là hàm không tìm thấy mã sách cần tra cứu trong cột đầu tiên của vùng dữ liệu.
+### 3. Công thức sử dụng IFERROR
+Công thức tại ô F2:
+```excel
+=IFERROR(VLOOKUP(C2,DanhMucSach!$A$2:$C$100,2,FALSE),"Không tìm thấy sách")
+```
+Sao chép công thức xuống các dòng còn lại.
+**Kết quả:**
+- S001 → Lập Trình C Căn Bản.
+- S002 → Giải Tích 1.
+- S003 → Kỹ Năng Mềm.
+- S099 → Không tìm thấy sách.
+## PHẦN 4: THIẾT KẾ SLIDE BÁO CÁO TIẾN ĐỘ
+### 1. Nội dung slide duy nhất
+**Assertion Title:** 4 phiếu mượn đã được chuẩn hóa, trong đó có 1 phiếu quá hạn và 1 mã sách chưa có trong danh mục.
+**Content Area:**
+- Tổng số phiếu mượn: 4.
+- Đang mượn: 2 phiếu.
+- Quá hạn: 1 phiếu.
+- Đã trả: 1 phiếu.
+- Mã sách chưa có trong danh mục: S099.
+**Loại biểu đồ đề xuất:** Bar Chart (biểu đồ cột).
+**Lý do lựa chọn:** Biểu đồ cột giúp so sánh số lượng phiếu mượn giữa các tình trạng. Người xem dễ nhận biết số phiếu đang mượn, quá hạn và đã trả.
+**Dữ liệu minh họa cho biểu đồ:**
+| Tình trạng | Số phiếu |
+|---|---:|
+| Đang mượn | 2 |
+| Quá hạn | 1 |
+| Đã trả | 1 |
+### 2. Áp dụng Rule 10/20/30
+- **10 slide:** Slide báo cáo này chiếm 1/10 tổng số slide, tương đương 10%.
+- **20 phút:** Nếu toàn bộ bài trình bày kéo dài 20 phút cho 10 slide, slide này được phân bổ khoảng 2 phút.
+- **30 pt:** Sử dụng cỡ chữ tối thiểu khoảng 30 pt cho nội dung chính để người xem dễ đọc.
+

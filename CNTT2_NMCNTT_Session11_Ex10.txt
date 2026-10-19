@@ -1,0 +1,101 @@
+# PHÂN TÍCH VÀ LỰA CHỌN CÔNG CỤ SOẠN THẢO TÀI LIỆU KẾ HOẠCH HỘI NGHỊ 2026
+## PHẦN 1: PHÂN TÍCH VÀ ĐỀ XUẤT
+### 1. Phân tích yêu cầu bài toán (I/O)
+- **Đầu vào (Input):**
+  - Ban Thư ký gồm 8 thành viên cùng soạn thảo tài liệu.
+  - Tài liệu dài 40 trang, có mục lục tự động, phân cấp Heading H1/H2/H3 và bảng biểu.
+  - Tài liệu cần xuất PDF và in khổ A4 để phát cho ban giám khảo.
+  - Một thành viên không có Microsoft Word trên máy tính.
+  - Máy tính kết nối với máy in tại trường chỉ có Microsoft Word.
+- **Đầu ra (Output):**
+  - Tài liệu Kế hoạch Hội nghị 2026 hoàn chỉnh, thống nhất nội dung và định dạng.
+  - Hỗ trợ cộng tác nhóm, hạn chế xung đột phiên bản và theo dõi chỉnh sửa.
+  - Có mục lục tự động, hệ thống tiêu đề rõ ràng và bảng biểu dễ đọc.
+  - Xuất được file PDF hoặc DOCX để in ấn không bị lỗi font, vỡ bố cục.
+  - Giảng viên có thể mở, đọc và đánh giá tài liệu thuận tiện.
+### 2. Phân tích ưu điểm và nhược điểm của hai giải pháp
+#### Giải pháp A: Microsoft Word (.docx) lưu trên OneDrive
+**Ưu điểm:**
+- Hỗ trợ cộng tác trực tuyến, cho phép nhiều thành viên cùng chỉnh sửa tài liệu.
+- Có Heading Styles, tạo mục lục tự động và quản lý bảng biểu.
+- Hỗ trợ Track Changes để theo dõi, kiểm soát và chấp nhận hoặc từ chối chỉnh sửa.
+- Xuất PDF thuận tiện, phù hợp với tài liệu dài cần in ấn chuyên nghiệp.
+- Có thể xuất file DOCX để nộp cho giảng viên.
+**Nhược điểm:**
+- Một số tính năng nâng cao có thể yêu cầu bản Microsoft Word trả phí.
+- Thành viên không có Word cần sử dụng Word Online và có tài khoản phù hợp để chỉnh sửa.
+- Cần kết nối Internet khi cộng tác trực tuyến.
+#### Giải pháp B: Google Docs trên Google Drive
+**Ưu điểm:**
+- Cộng tác thời gian thực, nhiều thành viên có thể cùng chỉnh sửa tài liệu.
+- Sử dụng trực tiếp trên trình duyệt, không bắt buộc cài đặt phần mềm.
+- Có lịch sử phiên bản để xem lại và khôi phục nội dung trước đó.
+- Hỗ trợ Heading Styles, mục lục tự động và bảng biểu.
+- Có thể tải xuống dưới dạng DOCX hoặc PDF để nộp và in.
+**Nhược điểm:**
+- Một số định dạng phức tạp có thể thay đổi khi chuyển đổi giữa Google Docs và Word.
+- Khả năng theo dõi chỉnh sửa khác với Track Changes của Word, có thể không thuận tiện nếu cần quy trình duyệt sửa chuyên nghiệp.
+- Cần kết nối Internet để cộng tác trực tuyến; khả năng làm việc ngoại tuyến cần được thiết lập trước.
+## PHẦN 2: SO SÁNH VÀ LỰA CHỌN
+### 3. Bảng so sánh 5 tiêu chí nghiệp vụ
+| Tiêu chí | Microsoft Word + OneDrive | Google Docs + Google Drive |
+|---|---|---|
+| Cộng tác nhóm | ✅ Hỗ trợ nhiều người chỉnh sửa và theo dõi thay đổi | ✅ Cộng tác thời gian thực, lịch sử phiên bản rõ ràng |
+| Tính năng văn phòng | ✅ Heading Styles, Auto TOC, Track Changes và bảng biểu mạnh | ✅ Heading Styles, mục lục tự động và bảng biểu; tính năng theo dõi sửa đổi khác Word |
+| In ấn và xuất PDF | ✅ Kiểm soát bố cục tốt, phù hợp tài liệu dài | ⚠️ Có thể cần kiểm tra lại bố cục khi xuất PDF hoặc chuyển sang Word |
+| Yêu cầu hạ tầng | ⚠️ Một số tính năng cần bản trả phí; có Word Online để chỉnh sửa trên trình duyệt | ✅ Không cần cài phần mềm, có thể sử dụng miễn phí với tài khoản Google |
+| Khả năng nộp cho giảng viên | ✅ Có thể nộp DOCX hoặc PDF | ✅ Có thể chia sẻ liên kết hoặc tải xuống DOCX/PDF |
+**Chú thích:** ✅ Phù hợp; ⚠️ Có hạn chế cần xử lý; ❌ Không đáp ứng yêu cầu chính.
+### 4. Lựa chọn giải pháp phù hợp
+**Đề xuất: Kết hợp Google Docs và Microsoft Word theo quy trình làm việc lai.**
+Lý do:
+- Google Docs phù hợp cho giai đoạn soạn thảo ban đầu vì cả 8 thành viên có thể cùng làm việc trực tuyến, kể cả thành viên không có Microsoft Word.
+- Sau khi thống nhất nội dung, Ban Thư ký tải tài liệu xuống định dạng DOCX để hoàn thiện bố cục bằng Microsoft Word.
+- Sử dụng Heading Styles H1/H2/H3 để tạo mục lục tự động và cập nhật khi nội dung thay đổi.
+- Kiểm tra bảng biểu, số trang, font chữ, lề trang và ngắt trang trước khi xuất PDF.
+- Lưu một bản PDF cuối cùng để in và một bản DOCX để chỉnh sửa hoặc nộp cho giảng viên.
+**Xử lý bẫy dữ liệu:**
+- **Bẫy 1 – Thành viên không có Microsoft Word:** Thành viên này vẫn có thể tham gia soạn thảo trên Google Docs bằng trình duyệt. Nếu Ban Thư ký chọn Word, có thể sử dụng Word Online thay vì bắt buộc cài Word trên máy tính.
+- **Bẫy 2 – Máy in tại trường chỉ có Word:** Ban Thư ký tải tài liệu Google Docs xuống dưới dạng DOCX, mở bằng Word trên máy tính tại trường và kiểm tra bố cục trước khi in. Phương án an toàn hơn là xuất PDF từ bản đã duyệt và in PDF nếu máy tính hỗ trợ trình đọc PDF.
+**Kết luận:** Giải pháp lai tận dụng ưu điểm cộng tác của Google Docs và khả năng kiểm soát định dạng của Word. Cách này phù hợp với nhóm 8 người, đáp ứng yêu cầu in tài liệu 40 trang và hạn chế rủi ro khi chuyển đổi định dạng.
+## PHẦN 3: THIẾT KẾ VÀ TRIỂN KHAI
+### 5. Thiết kế cấu trúc Heading cho Tài liệu Kế hoạch Hội nghị 2026
+#### H1 – Tiêu đề chương lớn
+- H1: Tổng quan về Hội nghị 2026
+- H1: Kế hoạch tổ chức hội nghị
+- H1: Chương trình và nội dung hội nghị
+- H1: Công tác hậu cần và nhân sự
+- H1: Dự toán kinh phí
+- H1: Phương án truyền thông
+- H1: Đánh giá rủi ro và phương án dự phòng
+- H1: Phụ lục
+#### H2 – Các mục chính trong từng chương
+- H2: Mục tiêu và ý nghĩa hội nghị
+- H2: Thời gian và địa điểm tổ chức
+- H2: Thành phần tham dự
+- H2: Lịch trình chương trình
+- H2: Phân công nhiệm vụ Ban Thư ký
+- H2: Trang thiết bị và cơ sở vật chất
+- H2: Chi phí tổ chức dự kiến
+- H2: Kế hoạch xử lý sự cố
+#### H3 – Nội dung chi tiết
+- H3: Mục tiêu chuyên môn
+- H3: Danh sách đại biểu và ban giám khảo
+- H3: Lịch đón tiếp đại biểu
+- H3: Quy trình tiếp nhận báo cáo
+- H3: Chuẩn bị phòng trình bày
+- H3: Chi phí in tài liệu và văn phòng phẩm
+- H3: Phương án xử lý sự cố thiết bị
+### Ví dụ cấu trúc phân cấp
+- **H1: Kế hoạch tổ chức hội nghị**
+  - **H2: Thời gian và địa điểm tổ chức**
+    - **H3: Thời gian đón tiếp đại biểu**
+    - **H3: Địa điểm tổ chức và sơ đồ phòng họp**
+  - **H2: Phân công nhiệm vụ**
+    - **H3: Nhiệm vụ Trưởng ban Thư ký**
+    - **H3: Nhiệm vụ các thành viên**
+- **H1: Dự toán kinh phí**
+  - **H2: Chi phí tổ chức**
+    - **H3: Chi phí in ấn tài liệu**
+    - **H3: Chi phí thiết bị và hậu cần**
+**Lưu ý triển khai:** Áp dụng Heading 1, Heading 2 và Heading 3 có sẵn trong Word hoặc Google Docs, không chỉ định dạng tiêu đề bằng cách tăng cỡ chữ và in đậm thủ công. Sau đó chèn mục lục tự động để tài liệu có cấu trúc rõ ràng, dễ cập nhật và thuận tiện khi đọc.

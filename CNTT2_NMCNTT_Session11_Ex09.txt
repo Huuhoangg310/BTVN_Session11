@@ -1,0 +1,69 @@
+
+## PHẦN 1: PHÂN TÍCH BÀI TOÁN (I/O)
+### 1. Xác định các thành phần của hàm VLOOKUP
+Cú pháp tổng quát:
+`=VLOOKUP(lookup_value, table_array, col_index_num, [range_lookup])`
+| Thành phần | Ý nghĩa | Giá trị áp dụng |
+|---|---|---|
+| `lookup_value` | Giá trị dùng để tìm kiếm | Mã tác giả tại ô C2 của sheet `DanhSachBaoCao`, sử dụng `TRIM(C2)` để loại bỏ khoảng trắng thừa. |
+| `table_array` | Vùng dữ liệu dùng để tra cứu | `'DanhMucTacGia'!$A$2:$E$100` (giả sử dữ liệu tác giả nằm từ dòng 2 đến dòng 100). |
+| `col_index_num` | Số thứ tự cột cần lấy kết quả | Cột D: 2; cột E: 4; cột F: 5. |
+| `range_lookup` | Kiểu tìm kiếm | `FALSE` để tìm kiếm chính xác mã tác giả. |
+### 2. Chiến lược xử lý 3 bẫy dữ liệu
+- **Bẫy 1 – Khoảng trắng thừa:** Sử dụng `TRIM(C2)` để loại bỏ khoảng trắng ở đầu và cuối mã tác giả trước khi tra cứu.
+- **Bẫy 2 – Mã tác giả chưa tồn tại:** Sử dụng `IFERROR` để thay lỗi bằng thông báo `"Chưa cập nhật"`.
+- **Bẫy 3 – Vùng tra cứu bị trôi:** Sử dụng dấu `$` để cố định vùng tra cứu `$A$2:$E$100`, tránh vùng dữ liệu thay đổi khi kéo công thức.
+### 3. Các bước thực hiện trong Excel
+- Bước 1: Mở file Excel chứa hai sheet `DanhSachBaoCao` và `DanhMucTacGia`.
+- Bước 2: Kiểm tra cấu trúc dữ liệu, xác định cột mã tác giả và vùng chứa danh mục tác giả.
+- Bước 3: Tại ô D2, nhập công thức tra cứu tên tác giả bằng `TRIM`, `VLOOKUP` và `IFERROR`.
+- Bước 4: Tại ô E2 và F2, sử dụng công thức tương tự, thay đổi chỉ số cột trả về.
+- Bước 5: Kéo công thức từ dòng 2 xuống dòng 81 để điền dữ liệu cho 80 báo cáo.
+- Bước 6: Kiểm tra kết quả, đặc biệt là các mã có khoảng trắng và 3 tác giả chưa có trong danh mục.
+## PHẦN 2: TRIỂN KHAI VÀ CHỐNG LỖI
+### 4. Công thức hoàn chỉnh cho ô D2 – Tên tác giả
+```excel
+=IFERROR(VLOOKUP(TRIM(C2),'DanhMucTacGia'!$A$2:$E$100,2,FALSE),"Chưa cập nhật")
+```
+**Giải thích:**
+- `TRIM(C2)`: Loại bỏ khoảng trắng thừa ở đầu và cuối mã tác giả.
+- `'DanhMucTacGia'!$A$2:$E$100`: Vùng tra cứu từ cột A đến cột E của sheet `DanhMucTacGia`. Dấu `$` cố định cột và dòng.
+- `2`: Trả về tên tác giả từ cột thứ hai trong vùng tra cứu.
+- `FALSE`: Tìm kiếm chính xác mã tác giả.
+- `IFERROR(...,"Chưa cập nhật")`: Hiển thị `"Chưa cập nhật"` nếu công thức phát sinh lỗi.
+### 5. Công thức cho ô E2 – Phòng và F2 – Thù lao
+**Ô E2 – Phòng trình bày:**
+```excel
+=IFERROR(VLOOKUP(TRIM(C2),'DanhMucTacGia'!$A$2:$E$100,4,FALSE),"Chưa cập nhật")
+```
+**Ô F2 – Thù lao:**
+```excel
+=IFERROR(VLOOKUP(TRIM(C2),'DanhMucTacGia'!$A$2:$E$100,5,FALSE),"Chưa cập nhật")
+```
+**Giải thích:**
+Chỉ cần thay đổi `col_index_num` vì các thông tin cần lấy nằm ở những cột khác nhau trong cùng vùng tra cứu:
+- `2`: Tên tác giả.
+- `4`: Phòng trình bày.
+- `5`: Thù lao.
+Các thành phần còn lại giữ nguyên để xử lý khoảng trắng, cố định vùng tra cứu và thông báo khi không tìm thấy mã tác giả.
+### 6. Hiện tượng khi bỏ dấu `$` trong Table_array
+Nếu không cố định vùng tra cứu, công thức tại D2 có thể là:
+```excel
+=IFERROR(VLOOKUP(TRIM(C2),'DanhMucTacGia'!A2:E100,2,FALSE),"Chưa cập nhật")
+```
+Khi kéo công thức từ D2 xuống D5, Excel tự động dịch chuyển vùng tra cứu:
+| Ô công thức | Vùng tra cứu khi không có `$` |
+|---|---|
+| D2 | `'DanhMucTacGia'!A2:E100` |
+| D3 | `'DanhMucTacGia'!A3:E101` |
+| D4 | `'DanhMucTacGia'!A4:E102` |
+| D5 | `'DanhMucTacGia'!A5:E103` |
+**Hậu quả:** Các dòng đầu của danh mục bị loại khỏi vùng tra cứu khi công thức được kéo xuống. Ví dụ, mã `TG001` nằm ở A2 có thể không được tìm thấy khi vùng tra cứu bắt đầu từ A5. Công thức có thể trả về `"Chưa cập nhật"` hoặc kết quả không chính xác.
+**Cách khắc phục:** Cố định vùng tra cứu bằng `'DanhMucTacGia'!$A$2:$E$100` để vùng dữ liệu luôn giữ nguyên khi sao chép công thức.
+### 7. Quy định nộp bài trên GitHub
+- Bước 1: Tạo repository GitHub mới.
+- Bước 2: Đặt tên repository theo cấu trúc `[Tên Lớp]_[Môn Học]_[Session bài học]_[Bài]`.
+- Bước 3: Tải file Excel bài làm và file Markdown chứa phần phân tích lên repository.
+- Bước 4: Kiểm tra các file đã được tải lên đầy đủ, sau đó sao chép đường dẫn repository.
+- Bước 5: Nộp đường dẫn repository lên hệ thống Portal theo yêu cầu của giảng viên.
+**Lưu ý:** Vùng `$A$2:$E$100` là ví dụ giả định. Khi làm trên file thực tế, cần điều chỉnh dòng cuối cho phù hợp với số lượng tác giả trong sheet `DanhMucTacGia`.
